@@ -96,8 +96,9 @@
                                         <h4>
                                             $<?= $offer->price ?>
                                             <?php if((float)$offer->old_price): ?>
-                                            <span>$<?= $offer->old_price ?></span></h4>
+                                            <span>$<?= $offer->old_price ?></span>
                                             <?php endif; ?>
+                                        </h4>
                                     </div>
                                     <div class="snipcart-details top_brand_home_details">
                                         <form action="checkout.html" method="post">
