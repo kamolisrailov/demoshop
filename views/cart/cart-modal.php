@@ -20,7 +20,7 @@ if(!empty($session['cart'])):?>
 
             <tr>
                 <td>
-                    <?= \yii\helpers\Html::img("@web/products/{$item['img']}", ['alt' => $item['name'], 'height' => 50]) ?>
+                    <?= \yii\helpers\Html::img("@web/products/{$item['img']}", ['alt' => $item['title'], 'height' => 50]) ?>
                 </td>
                 <td><?= $item['title']?></td>
                 <td><?= $item['qty']?></td>
