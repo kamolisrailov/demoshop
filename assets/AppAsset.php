@@ -28,7 +28,6 @@ class AppAsset extends AssetBundle
         '//fonts.googleapis.com/css?family=Ubuntu:400,300,300italic,400italic,500,500italic,700,700italic',
     ];
     public $js = [
-        'js/jquery-1.11.1.min.js',
         'js/bootstrap.min.js',
         'js/move-top.js',
         'js/easing.js',
