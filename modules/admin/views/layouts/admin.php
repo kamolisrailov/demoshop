@@ -177,13 +177,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 'homeLink' => ['label' => 'Главная', 'url' => '/admin/'],
                             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
                         ]) ?>
-                        <?= Alert::widget() ?>
+
                         </ol>
                     </div><!-- /.col -->
+
                 </div><!-- /.row -->
+
             </div><!-- /.container-fluid -->
         </div>
         <!-- /.content-header -->
+        <?= Alert::widget() ?>
 
         <!-- Main content -->
         <div class="content">

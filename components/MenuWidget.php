@@ -17,6 +17,10 @@ class MenuWidget extends Widget
     public $data;
     public $tree;
     public $menuHtml;
+    public $model;
+    public $cache_time = 60;
+
+
 
     public  function init()
     {
@@ -34,9 +38,11 @@ class MenuWidget extends Widget
 
     public function run()
     {
-        $menu = \Yii::$app->cache->get('menu');
-        if($menu){
-            return $menu;
+        if($this->cache_time) {
+            $menu = \Yii::$app->cache->get('menu');
+            if ($menu) {
+                return $menu;
+            }
         }
 
         $this->data = Category::find()->select('id, parent_id, title')->indexBy('id')->asArray()->all();
@@ -46,8 +52,9 @@ class MenuWidget extends Widget
         $this->menuHtml .= '</ul>';
         //debug($this->tree);
 
-        \Yii::$app->cache->set('menu', $this->menuHtml, 60);
-
+        if($this->cache_time) {
+            \Yii::$app->cache->set('menu', $this->menuHtml, $this->cache_time);
+        }
         return $this->menuHtml;
     }
 
